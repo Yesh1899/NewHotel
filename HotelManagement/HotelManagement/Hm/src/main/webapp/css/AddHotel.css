@@ -1,0 +1,35 @@
+body {
+    background-image: url(../Images/Hotelslisting.jfif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-right: 60%;
+    background-size: 100% 100%;
+}
+
+
+
+form {
+    border: 3px solid rgb(13, 5, 247);
+    background-color: #808080;
+    width: 390px;
+    height: 500px;
+    padding-left: 10`%;
+}
+
+
+
+div {
+    font-weight: 900;
+    color: rgb(56, 34, 200);
+}
+
+
+
+h1 {
+    background-color: rgb(10, 10, 36);
+    width: 100%;
+    height: 50px;
+    color: white;
+    margin-top: 0%;
+    padding-top: 1%;
+}

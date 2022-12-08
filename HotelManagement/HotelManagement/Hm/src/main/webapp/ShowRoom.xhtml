@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+       <h:head>
+        <title>Room Details</title>
+          <style type="text/css">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 20px;
+            }
+
+
+
+
+
+          tr:nth-child(even){background-color: #a4a2a0}
+            th {
+                background-color: #5EAF90;
+                color: white;
+            }
+        </style>
+    </h:head>
+        <h:body>
+        <h:form>
+            <center>
+                <h2><h:outputText value="Show Room"/></h2>
+            </center>
+            <h:dataTable value="#{hotelDetailsDAO.showroom()}" var="r" boarder="3">
+             <h:column>
+                    <f:facet name="header">Room Id</f:facet>
+                    <h:outputText value="#{r.roomId}"/>
+                </h:column>
+                
+                        <h:column>
+                    <f:facet name="header">Type</f:facet>
+                    <h:outputText value="#{r.type}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">status</f:facet>
+                    <h:outputText value="#{r.status}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">CostPerDay</f:facet>
+                    <h:outputText value="#{r.costperday}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Hotel Id</f:facet>
+                    <h:outputText value="#{r.hotelId}"/>
+                </h:column>
+                   <h:column>
+                    <f:facet name="header">Choose Room</f:facet>
+<h:commandButton action="RoomBooking.jsp" value="Select"/>
+                </h:column>
+                
+        </h:dataTable>     
+                         
+        </h:form>
+    </h:body>
+</html>

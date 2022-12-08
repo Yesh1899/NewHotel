@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+        <h:head>
+<link rel="stylesheet" href="css/AddHotel.css"/>
+</h:head>
+<h:body>
+<center><h1>HOTEL MANAGEMENT</h1></center>
+<h2>HERE YOU CAN ADD YOUR HOTELS</h2>
+<h:form>
+        Hotel Name:
+<h:inputText value="#{hoteldetails.hotelName}" required="true" requiredMessage="HotelName is mandatory"/><br/><br/>
+
+        Address1:
+<h:inputText value="#{hoteldetails.address1}" required="true" requiredMessage="Address1 is mandatory"/><br/><br/>
+
+        Address2:
+<h:inputText value="#{hoteldetails.address2}" /><br/><br/>
+
+        City:
+<h:inputText value="#{hoteldetails.city}" required="true" requiredMessage="City is mandatory"/><br/><br/>
+
+         Zipcode:
+<h:inputText value="#{hoteldetails.zipcode}" validator="#{hotelDetailsDAO.validatezipcode}" required="true"/><br/><br/>
+
+          Contact Number :
+<h:inputText value="#{hoteldetails.contactNo}" validator="#{hotelDetailsDAO.validatePhnNo}" required="true"/><br/><br/>
+
+         Rating :
+<h:inputText value="#{hoteldetails.rating}" required="true" requiredMessage="Rating is mandatory"/><br/><br/>
+
+         Review :
+<h:inputText value="#{hoteldetails.review}" /><br/><br/>
+
+
+         About us:
+<h:inputText value="#{hoteldetails.aboutus}" />
+<br />
+<br />
+
+ 
+
+        <h:commandButton value="Add"
+            action="#{hotelDetailsDAO.addhotel(hoteldetails)}" />
+
+    </h:form>
+</h:body>
+</html>

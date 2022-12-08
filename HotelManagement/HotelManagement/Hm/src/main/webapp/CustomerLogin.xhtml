@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      <h:head>
+<link rel="stylesheet" href="css/CustLogin.css"/>
+</h:head>
+    
+   <h:body>
+   <h1>Hotel Management</h1>
+   <h2>User Authentication</h2>
+       
+        <h:form >
+        UserName:
+        <h:inputText value="#{customer.username}" id="u"  /> <br/><br/>
+        Password:
+        <h:inputSecret value="#{customer.pass}" id="p" /> <br/><br/>
+            
+            <h:commandButton value="Login" action="#{hotelDetailsDAO.checkUsers(customer)}"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>

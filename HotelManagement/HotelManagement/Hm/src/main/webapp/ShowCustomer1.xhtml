@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+	   <h:head>
+        <title>Customer Details</title>
+          <style type="text/css">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even){background-color: #f2f2f0}
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </h:head>
+	    <h:body>
+        <h:form>
+            <center>
+                <h2><h:outputText value="Customer Records"/></h2>
+            </center>
+            <h:dataTable value="#{hotelDetailsDAO.showCustomer()}" var="c" boarder="3">
+             <h:column>
+                    <f:facet name="header">User Name</f:facet>
+                    <h:outputText value="#{c.username}"/>
+                </h:column>
+                        <h:column>
+                    <f:facet name="header">Password</f:facet>
+                    <h:outputText value="#{c.pass}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">customerId</f:facet>
+                    <h:outputText value="#{c.customerId}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">firstName</f:facet>
+                    <h:outputText value="#{c.firstName}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">lastName</f:facet>
+                    <h:outputText value="#{c.lastName}"/>
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">contactNo</f:facet>
+                    <h:outputText value="#{c.contactNo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">idProof</f:facet>
+                    <h:outputText value="#{c.idProof}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">city</f:facet>
+                    <h:outputText value="#{c.city}"/>
+                </h:column>
+                
+        </h:dataTable>     
+        <center>
+        <h:commandButton action = "addCustomer.xhtml?faces-redirect=true" value="Add Customer"/> 
+        </center>                            
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
+     

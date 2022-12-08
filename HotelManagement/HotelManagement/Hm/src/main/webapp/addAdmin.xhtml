@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<link rel="stylesheet" href="css/AdminReg.css"/>
+</h:head>
+<h:body>
+<h1>Admin Registration</h1>
+<h:form>
+Admin Name:
+<h:inputText id="adminName" value="#{admin.adminName}" required="true" requiredMessagr="Admin Name is Mandatory"/>
+<br/><br/>
+Admin Password:
+<h:inputText value="#{admin.pass}"   validator="#{hotelDetailsDAO.validatePassword}"/>
+<br/><br/>
+
+
+
+First name:
+<h:inputText value="#{admin.firstName}" required="true"/><br/><br/>
+last name:
+<h:inputText value="#{admin.lastName}"/><br/><br/>
+Contact Number :
+<h:inputText value="#{admin.contactNo}"   validator="#{hotelDetailsDAO.validatePhnNo}"/><br/><br/>
+Admin Id Proof:
+          
+        <h:selectOneMenu id="idproof" value="#{admin.idProof}" required="true" label="IdProof">
+       <f:selectItem itemValue="Aadhar" itemLabel="Aadhar" />
+       <f:selectItem itemValue="Pan" itemLabel="Pan" />
+       <f:selectItem itemValue="voterId" itemLabel="voterId" />
+        <f:validateRequired/>        
+</h:selectOneMenu>
+<br/><br/>
+Admin City:
+<h:inputText value="#{admin.city}" /><br/><br/>
+  <h:commandButton value="Save" action="#{hotelDetailsDAO.addAdmin(admin)}" />
+                             
+</h:form>
+</h:body>
+</html>

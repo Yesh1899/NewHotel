@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+
+
+
+<h1> Search Room </h1>
+<h:form>
+Room Type:
+
+<h:selectOneMenu type="roomtype" value="#{room.type}" required="true" label="Roomtype">
+
+
+
+         <f:selectItem itemValue="SINGLE" itemLabel="SINGLE" />
+       <f:selectItem itemValue="DOUBLE" itemLabel="DOUBLE" />       
+</h:selectOneMenu>
+<br/><br/>
+
+<br/><br/>
+
+Hotel Id:
+<h:selectOneMenu type="hotel Id" value="#{room.hotelId}" required="true" label="hotelId"/>
+
+<br/><br/>
+
+
+Room Status:
+<h:selectOneMenu status="roomstatus" value="#{room.status}" required="true" label="Roomstatus">
+
+
+
+         <f:selectItem itemValue="AVAILABLE" itemLabel="Available" />
+       <f:selectItem itemValue="BOOKED" itemLabel="Booked" />       
+</h:selectOneMenu>
+<br/><br/>
+
+
+
+ <h:commandButton value="Add" action="#{hotelDetailsDAO.searchroom(room)}" />
+</h:form>
+</h:body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<title>Room Details</title>
+<style type="text/css">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 20px;
+            }
+
+ 
+
+ 
+
+           tr:nth-child(even){background-color: #a4a2a0}
+            th {
+                background-color: #5EAF90;
+                color: white;
+            }
+</style>
+</h:head>
+<h:body>
+<h:form>
+<center>
+<h2><h:outputText value="Show hotel"/></h2>
+</center>
+<h:dataTable value="#{hotelDetailsDAO.showhotel()}" var="h" boarder="3">
+<h:column>
+<f:facet name="header">Hotel Name</f:facet>
+<h:outputText value="#{h.hotelName}"/>
+</h:column>
+<h:column>
+<f:facet name="header">Address1</f:facet>
+<h:outputText value="#{h.address1}"/>
+</h:column>
+<h:column>
+<f:facet name="header">Address2</f:facet>
+<h:outputText value="#{h.address2}"/>
+</h:column>
+<h:column>
+<f:facet name="header">city</f:facet>
+<h:outputText value="#{h.city}"/>
+</h:column>
+<h:column>
+<f:facet name="header">Zipcode </f:facet>
+<h:outputText value="#{h.zipcode}"/>
+</h:column>
+<h:column>
+<f:facet name="header">Rating </f:facet>
+<h:outputText value="#{h.rating}"/>
+</h:column>
+<h:column>
+<f:facet name="header">review </f:facet>
+<h:outputText value="#{h.review}"/>
+</h:column>
+<h:column>
+<f:facet name="header">review </f:facet>
+<h:outputText value="#{h.aboutus}"/>
+</h:column>
+<h:column>
+<f:facet name="header"></f:facet>
+<h:commandButton action="ShowRoom.xhtml?faces-redirect=true" value="Room's List"/>
+</h:column>
+
+</h:dataTable>     
+<center>
+<h:commandButton action = "AddHotel.xhtml?faces-redirect=true" value="add hotel"/>
+</center>                            
+</h:form>
+</h:body>
+</html>

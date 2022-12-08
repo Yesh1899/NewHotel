@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<link rel="stylesheet" href="css/CustReg.css"/>
+</h:head>
+<h:body>
+<h1>Customer Registration</h1>
+<h:form>
+User Name:
+<h:inputText value="#{customer.username}"  required="true" requiredMessage="UserName is mandatory"/>
+<br/><br/>
+Customer Password:
+<h:inputText value="#{customer.pass}" validator="#{hotelDetailsDAO.validatePassword}" />
+<br/><br/>
+First name:
+<h:inputText value="#{customer.firstName}" required="true"  requiredMessage="firstName is mandatory"/><br/><br/>
+last name:
+<h:inputText value="#{customer.lastName}" required="true"/><br/><br/>
+Contact Number :
+<h:inputText value="#{customer.contactNo}" validator="#{hotelDetailsDAO.validatePhnNo}"/><br/><br/>
+
+CustomerId Proof:
+		  
+        <h:selectOneMenu id="idproof" value="#{customer.idProof}" required="true" requiredMessage="IdProof is mandatory" 
+        label="IdProof">
+   	<f:selectItem itemValue="Aadhar" itemLabel="Aadhar" />
+   	<f:selectItem itemValue="Pan" itemLabel="Pan" />
+   	<f:selectItem itemValue="voterId" itemLabel="voterId" />
+   	 <f:validateRequired/>   	 
+</h:selectOneMenu>
+
+<br/><br/> 
+Email Id :
+<h:inputText value="#{customer.email}" validator="#{hotelDetailsDAO.validateEmail}"/><br/><br/>
+
+Customer City:
+<h:inputText value="#{customer.city}" required="true" requiredMessage="City is mandatory" /><br/><br/>
+
+
+                    <h:commandButton value="Save" action="#{hotelDetailsDAO.addCustomer(customer)}" /><br/><br/>
+                    		 
+</h:form>
+</h:body>
+</html>
+
+
+
+
